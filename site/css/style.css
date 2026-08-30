@@ -1,0 +1,2079 @@
+/* ==========================================================================
+   TASTE OF ETHIOPIA
+   Main Website Stylesheet
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. FONTS
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+
+/* ==========================================================================
+   2. DESIGN COLORS
+   ========================================================================== */
+
+:root {
+    --espresso: #24140f;
+    --brown: #3a2118;
+    --brown-2: #543126;
+    --coffee: #6e4432;
+
+    --terracotta: #a94d32;
+
+    --gold: #d9a441;
+    --gold-light: #f1c96d;
+
+    --cream: #fbf4e9;
+    --cream-2: #f3e5d1;
+    --paper: #fffdf9;
+
+    --ink: #2a1b16;
+    --muted: #79665b;
+
+    --line: #ead8c2;
+
+    --shadow:
+        0 18px 55px rgba(45, 24, 14, 0.12);
+
+    --shadow-soft:
+        0 8px 26px rgba(45, 24, 14, 0.08);
+
+    --radius: 24px;
+
+    --max-width: 1180px;
+}
+
+
+/* ==========================================================================
+   3. RESET
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', Arial, sans-serif;
+    color: var(--ink);
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(217, 164, 65, 0.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 60%,
+            rgba(169, 77, 50, 0.05),
+            transparent 24%
+        ),
+        var(--cream);
+
+    line-height: 1.65;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(
+        var(--max-width),
+        calc(100% - 40px)
+    );
+
+    margin: auto;
+}
+
+
+/* ==========================================================================
+   4. TYPOGRAPHY
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+.logo {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: -0.5px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    text-transform: uppercase;
+    letter-spacing: 2.6px;
+
+    color: var(--gold);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    margin-bottom: 14px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+    content: '';
+
+    width: 24px;
+    height: 1px;
+
+    background: currentColor;
+
+    opacity: 0.65;
+}
+
+
+/* ==========================================================================
+   5. NAVIGATION
+   ========================================================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(36, 20, 15, 0.94);
+
+    color: #fff9ef;
+
+    border-bottom:
+        1px solid rgba(241, 201, 109, 0.18);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 6px 25px rgba(25, 12, 8, 0.14);
+}
+
+.nav-inner {
+    min-height: 78px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.logo {
+    font-size: 1.45rem;
+    font-weight: 800;
+
+    letter-spacing: -0.3px;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--gold-light);
+}
+
+.nav-links {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 3px;
+}
+
+.nav-links a {
+    position: relative;
+
+    padding: 11px 13px;
+
+    border-radius: 12px;
+
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    color: #f7ecdf;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 13px;
+    right: 13px;
+    bottom: 6px;
+
+    height: 2px;
+
+    background: var(--gold-light);
+
+    transform: scaleX(0);
+
+    transform-origin: center;
+
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #fff;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    transform: scaleX(1);
+}
+
+.menu-toggle {
+    display: none;
+
+    margin-left: auto;
+
+    background: none;
+
+    border: 0;
+
+    color: #fff;
+
+    font-size: 1.7rem;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   6. BUTTONS
+   ========================================================================== */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 21px;
+
+    border-radius: 999px;
+
+    background: var(--gold);
+
+    color: var(--espresso);
+
+    font-weight: 800;
+
+    border: 1px solid var(--gold);
+
+    transition: 0.25s ease;
+
+    box-shadow:
+        0 8px 22px rgba(217, 164, 65, 0.18);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    background: var(--gold-light);
+
+    box-shadow:
+        0 12px 26px rgba(217, 164, 65, 0.25);
+}
+
+.btn-outline {
+    background: transparent;
+
+    color: #fff;
+
+    border-color:
+        rgba(255, 255, 255, 0.48);
+
+    box-shadow: none;
+
+    margin-left: 8px;
+}
+
+.btn-outline:hover {
+    background: #fff;
+
+    color: var(--brown);
+
+    border-color: #fff;
+}
+
+
+/* ==========================================================================
+   7. HOME PAGE HERO
+   ========================================================================== */
+
+.hero {
+    position: relative;
+
+    isolation: isolate;
+
+    overflow: hidden;
+
+    min-height: 690px;
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    color: #fff;
+
+    padding: 110px 20px 120px;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(241, 201, 109, 0.18),
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 12% 75%,
+            rgba(205, 104, 65, 0.18),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #25140f 0%,
+            #4b2a20 52%,
+            #21110d 100%
+        );
+}
+
+
+/* --------------------------------------------------------------------------
+   STRAIGHT DIAMOND PATTERN
+   -------------------------------------------------------------------------- */
+
+.hero::before {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: -1;
+
+    opacity: 0.16;
+
+    /*
+       Two diagonal lines crossing each other create
+       upright diamond shapes.
+
+       The diamonds themselves stay straight.
+       The pattern is NOT rotated.
+    */
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 47%,
+            rgba(241, 201, 109, 0.65) 48%,
+            rgba(241, 201, 109, 0.65) 50%,
+            transparent 51%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 47%,
+            rgba(241, 201, 109, 0.65) 48%,
+            rgba(241, 201, 109, 0.65) 50%,
+            transparent 51%
+        );
+
+    background-size: 60px 60px;
+
+    background-position:
+        0 0,
+        0 0;
+
+    transform: none;
+}
+
+
+.hero::after {
+    content: '';
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -110px;
+
+    transform: translateX(-50%);
+
+    width: 780px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(217, 164, 65, 0.12);
+
+    filter: blur(25px);
+
+    z-index: -1;
+}
+
+.hero-content {
+    max-width: 850px;
+
+    position: relative;
+}
+
+
+/* Cute little stars */
+
+.hero-content::before,
+.hero-content::after {
+    content: '✦';
+
+    position: absolute;
+
+    color:
+        rgba(241, 201, 109, 0.55);
+
+    font-size: 1.6rem;
+
+    animation:
+        floatStar 4s ease-in-out infinite;
+}
+
+.hero-content::before {
+    left: -38px;
+    top: 20%;
+}
+
+.hero-content::after {
+    right: -38px;
+    bottom: 18%;
+
+    animation-delay: 1.2s;
+}
+
+@keyframes floatStar {
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(8deg);
+
+        opacity: 0.75;
+    }
+}
+
+.hero h1 {
+    font-size:
+        clamp(3.4rem, 7vw, 6.6rem);
+
+    line-height: 0.98;
+
+    margin-bottom: 24px;
+
+    text-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.25);
+}
+
+.hero p {
+    font-size: 1.12rem;
+
+    max-width: 680px;
+
+    margin:
+        0 auto 32px;
+
+    color: #f4e7d8;
+}
+
+
+/* ==========================================================================
+   8. GENERAL SECTIONS
+   ========================================================================== */
+
+.section {
+    position: relative;
+
+    padding: 82px 0;
+}
+
+.section:nth-of-type(even) {
+    background:
+        rgba(243, 229, 209, 0.34);
+}
+
+.section-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 24px;
+
+    margin-bottom: 32px;
+}
+
+.section-head h2 {
+    font-size:
+        clamp(2rem, 4vw, 2.8rem);
+
+    color: var(--brown);
+
+    line-height: 1.1;
+}
+
+.section-head h2::after {
+    content: ' ✦';
+
+    color: var(--gold);
+
+    font-size: 0.65em;
+
+    vertical-align: middle;
+}
+
+.section-head p {
+    color: var(--muted);
+
+    max-width: 650px;
+}
+
+
+/* ==========================================================================
+   9. RECIPE / CONTENT CARDS
+   ========================================================================== */
+
+.cards,
+.recipe-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+    position: relative;
+
+    background: var(--paper);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: var(--shadow-soft);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card::after {
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: inherit;
+
+    pointer-events: none;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(255, 255, 255, 0.5);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+
+    border-color: #dfc29d;
+}
+
+.card-image {
+    width: 100%;
+
+    height: 245px;
+
+    object-fit: cover;
+
+    background: var(--cream-2);
+
+    transition:
+        transform 0.45s ease;
+}
+
+.card:hover .card-image {
+    transform: scale(1.035);
+}
+
+.card-body {
+    padding: 22px 22px 24px;
+}
+
+.card-tag {
+    display: inline-block;
+
+    font-size: 0.68rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    color: var(--terracotta);
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.card h3 {
+    font-size: 1.55rem;
+
+    color: var(--brown);
+
+    margin-bottom: 7px;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: 0.95rem;
+
+    margin-bottom: 17px;
+}
+
+.meta {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    color: #766157;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+.text-link {
+    color: var(--terracotta);
+
+    font-weight: 800;
+
+    font-size: 0.9rem;
+}
+
+.text-link:hover {
+    color: var(--brown);
+}
+
+
+/* ==========================================================================
+   10. INTRO / FEATURE SECTION
+   ========================================================================== */
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns:
+        1.06fr 0.94fr;
+
+    gap: 46px;
+
+    align-items: center;
+}
+
+.feature-box {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #4a291f,
+            #2c1913
+        );
+
+    color: var(--cream);
+
+    border-radius: 30px;
+
+    padding: 42px;
+
+    box-shadow: var(--shadow);
+}
+
+.feature-box::before {
+    content: '✦';
+
+    position: absolute;
+
+    right: 28px;
+    top: 18px;
+
+    color:
+        rgba(241, 201, 109, 0.25);
+
+    font-size: 5rem;
+}
+
+.feature-box h3 {
+    font-size: 2rem;
+
+    color: var(--gold-light);
+
+    margin-bottom: 12px;
+}
+
+.feature-list {
+    list-style: none;
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.feature-list li {
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    color: #f0dfcc;
+}
+
+
+/* ==========================================================================
+   11. PAGE HEADERS
+   ========================================================================== */
+
+.page-heading {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 96px 0 78px;
+
+    color: #fff;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2b1812,
+            #513025 58%,
+            #2d1913
+        );
+}
+
+.page-heading::before {
+    content: '';
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border:
+        1px solid
+        rgba(241, 201, 109, 0.14);
+
+    border-radius: 50%;
+
+    left: -260px;
+    top: -250px;
+}
+
+.page-heading::after {
+    content: '';
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border:
+        1px solid
+        rgba(241, 201, 109, 0.12);
+
+    border-radius: 50%;
+
+    right: -180px;
+    bottom: -210px;
+}
+
+.page-heading > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+.page-heading h1 {
+    font-size:
+        clamp(2.9rem, 6vw, 4.8rem);
+
+    line-height: 1;
+
+    margin-bottom: 17px;
+}
+
+.page-heading p {
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #eadaca;
+
+    font-size: 1.03rem;
+}
+
+
+/* ==========================================================================
+   12. CATEGORY FILTERS
+   ========================================================================== */
+
+.filters {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    margin-bottom: 32px;
+
+    padding: 7px;
+
+    background:
+        rgba(255, 253, 249, 0.72);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 18px;
+
+    width: max-content;
+
+    max-width: 100%;
+}
+
+.filter-btn {
+    border: 0;
+
+    background: transparent;
+
+    color: var(--brown-2);
+
+    padding: 10px 15px;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--brown);
+
+    color: #fff;
+
+    box-shadow:
+        0 5px 14px
+        rgba(58, 33, 24, 0.15);
+}
+
+
+/* ==========================================================================
+   13. GALLERY
+   ========================================================================== */
+
+.gallery-intro {
+    padding-top: 62px;
+}
+
+.gallery-ribbon {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin:
+        0 0 30px;
+}
+
+.gallery-ribbon span {
+    padding: 9px 15px;
+
+    border-radius: 999px;
+
+    background: #fffaf2;
+
+    border:
+        1px solid var(--line);
+
+    color: var(--brown-2);
+
+    font-weight: 700;
+
+    font-size: 0.86rem;
+
+    box-shadow:
+        0 5px 12px
+        rgba(45, 24, 14, 0.05);
+}
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.gallery-item {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf9,
+            #f7ead9
+        );
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 28px
+        rgba(45, 24, 14, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Small natural variation */
+
+.gallery-item:nth-child(3n + 1) {
+    transform: rotate(-0.6deg);
+}
+
+.gallery-item:nth-child(3n + 2) {
+    transform: rotate(0.45deg);
+}
+
+.gallery-item:nth-child(3n) {
+    transform: rotate(-0.25deg);
+}
+
+.gallery-item:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg)
+        scale(1.015);
+
+    box-shadow: var(--shadow);
+}
+
+/* Favorite button */
+.gallery-item {
+    position: relative;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+
+    width: 46px;
+    height: 46px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 250, 242, 0.95);
+
+    color: #9E1B1B;
+
+    font-size: 25px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Little cute hover effect */
+.favorite-btn:hover {
+    transform: scale(1.1);
+
+    background: #fff;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.16);
+}
+
+/* When favorited */
+.favorite-btn.favorited {
+    color: #9E1B1B;
+}
+
+.favorite-btn.favorited:hover {
+    transform: scale(1.12);
+}
+
+.gallery-item img {
+    width: 100%;
+
+    height: 245px;
+
+    object-fit: cover;
+
+    background: var(--cream-2);
+
+    cursor: zoom-in;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+.gallery-caption {
+    padding:
+        17px 18px 20px;
+}
+
+.gallery-caption h3 {
+    color: var(--brown);
+
+    font-size: 1.25rem;
+
+    margin-bottom: 3px;
+}
+
+.gallery-caption p {
+    font-size: 0.88rem;
+
+    color: var(--muted);
+
+    line-height: 1.55;
+}
+
+
+/* ==========================================================================
+   14. RECIPE PAGE
+   ========================================================================== */
+
+.recipe-hero {
+    padding: 60px 0 48px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--cream-2),
+            var(--cream)
+        );
+}
+
+.recipe-layout {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.03fr;
+
+    gap: 48px;
+
+    align-items: center;
+}
+
+.recipe-photo {
+    width: 100%;
+
+    height: 530px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+
+    border:
+        7px solid
+        rgba(255, 253, 249, 0.9);
+}
+
+.recipe-title h1 {
+    font-size:
+        clamp(2.8rem, 5vw, 4.7rem);
+
+    line-height: 1.02;
+
+    color: var(--brown);
+
+    margin:
+        10px 0 16px;
+}
+
+.recipe-title > p {
+    color: var(--muted);
+
+    font-size: 1.05rem;
+
+    max-width: 590px;
+
+    line-height: 1.8;
+}
+
+.recipe-stats {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin: 25px 0;
+}
+
+.stat {
+    background:
+        rgba(255, 253, 249, 0.88);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 14px;
+
+    padding: 11px 14px;
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 16px
+        rgba(45, 24, 14, 0.05);
+}
+
+.recipe-section {
+    padding: 58px 0;
+}
+
+.recipe-content {
+    display: grid;
+
+    grid-template-columns:
+        0.78fr 1.22fr;
+
+    gap: 28px;
+}
+
+.panel {
+    background: var(--paper);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 26px;
+
+    padding: 30px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+.panel h2 {
+    font-size: 1.85rem;
+
+    color: var(--brown);
+
+    margin-bottom: 18px;
+}
+
+
+/* Ingredients */
+
+.ingredients {
+    list-style: none;
+
+    display: grid;
+
+    gap: 0;
+}
+
+.ingredients li {
+    position: relative;
+
+    padding:
+        11px 0 11px 27px;
+
+    border-bottom:
+        1px dashed #dfc9ae;
+}
+
+.ingredients li::before {
+    content: '•';
+
+    position: absolute;
+
+    left: 8px;
+
+    color: var(--terracotta);
+
+    font-weight: 900;
+}
+
+
+/* Recipe instructions */
+
+.steps {
+    counter-reset: step;
+
+    list-style: none;
+}
+
+.steps li {
+    position: relative;
+
+    padding:
+        0 0 24px 58px;
+
+    margin-bottom: 18px;
+
+    border-bottom:
+        1px dashed #e6d4be;
+}
+
+.steps li:last-child {
+    border-bottom: 0;
+
+    margin-bottom: 0;
+}
+
+.steps li::before {
+    counter-increment: step;
+
+    content: counter(step);
+
+    position: absolute;
+
+    left: 0;
+    top: -2px;
+
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: var(--gold);
+
+    color: var(--espresso);
+
+    font-weight: 900;
+
+    box-shadow:
+        0 5px 14px
+        rgba(217, 164, 65, 0.22);
+}
+
+.callout {
+    margin-top: 24px;
+
+    border-left:
+        4px solid var(--gold);
+
+    background: #fbf1df;
+
+    padding: 16px 18px;
+
+    border-radius:
+        0 16px 16px 0;
+
+    color: #624a3d;
+}
+
+
+/* ==========================================================================
+   15. ETHIOPIA PAGE
+   ========================================================================== */
+
+.eth-story {
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.eth-story p {
+    font-size: 1.02rem;
+
+    color: #665249;
+
+    margin-bottom: 16px;
+}
+
+
+/* ==========================================================================
+   ETHIOPIA PAGE - PHOTOS
+   ========================================================================== */
+
+.eth-photo {
+    min-height: 260px;
+
+    border:
+        1px solid rgba(158, 27, 27, 0.12);
+
+    border-radius: 26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8eddf,
+            #efe0cb
+        );
+
+    display: grid;
+
+    place-items: center;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    padding: 12px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+}
+
+.eth-photo img {
+    width: 100%;
+
+    height: 360px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.eth-photo:hover img {
+    transform: scale(1.03);
+}
+
+.eth-photo strong {
+    display: block;
+
+    color: var(--brown);
+
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 1.3rem;
+
+    margin-bottom: 6px;
+}
+
+.eth-photo small {
+    display: block;
+}
+
+
+/* ==========================================================================
+   MONUMENT & HERITAGE PHOTOS
+   ========================================================================== */
+
+.about-grid .panel .eth-photo {
+    width: 100%;
+
+    height: 280px;
+
+    min-height: 0;
+
+    margin-bottom: 18px;
+
+    padding: 10px;
+
+    border-radius: 24px;
+
+    border:
+        1px solid rgba(158, 27, 27, 0.12);
+
+    box-shadow:
+        0 7px 20px
+        rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+}
+
+.about-grid .panel .eth-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 18px;
+}
+
+
+/* ==========================================================================
+   ETHIOPIA HIGHLIGHTS
+   ========================================================================== */
+
+.eth-highlights {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.eth-highlight {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: var(--paper);
+
+    border:
+        1px solid var(--line);
+
+    box-shadow: var(--shadow-soft);
+}
+
+.eth-highlight .icon {
+    font-size: 1.8rem;
+
+    margin-bottom: 8px;
+}
+
+.eth-highlight h3 {
+    color: var(--brown);
+
+    margin-bottom: 7px;
+}
+
+.eth-highlight p {
+    color: var(--muted);
+
+    font-size: 0.93rem;
+}
+
+/* ==========================================================================
+   16. ABOUT PAGE
+   ========================================================================== */
+
+.about-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.fact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+    margin-top: 27px;
+}
+
+.fact {
+    background: var(--paper);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 19px;
+
+    padding: 23px;
+
+    box-shadow: var(--shadow-soft);
+}
+
+.fact strong {
+    display: block;
+
+    font-family:
+        'Playfair Display',
+        Georgia,
+        serif;
+
+    font-size: 1.4rem;
+
+    color: var(--brown);
+
+    margin-bottom: 4px;
+}
+
+.fact span {
+    color: var(--muted);
+
+    font-size: 0.9rem;
+}
+
+
+/* ==========================================================================
+   17. SHARE / CONTACT FORM
+   ========================================================================== */
+
+.form {
+    max-width: 760px;
+
+    margin: auto;
+
+    background: var(--paper);
+
+    border:
+        1px solid var(--line);
+
+    border-radius: 28px;
+
+    padding: 32px;
+
+    box-shadow: var(--shadow);
+}
+
+.field {
+    display: grid;
+
+    gap: 7px;
+
+    margin-bottom: 18px;
+}
+
+.field label {
+    font-weight: 800;
+
+    color: var(--brown);
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+
+    font: inherit;
+
+    padding: 13px 14px;
+
+    border:
+        1px solid #dcc4a7;
+
+    border-radius: 13px;
+
+    background: #fffdfa;
+
+    color: var(--ink);
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(217, 164, 65, 0.13);
+}
+
+.field textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+.notice {
+    padding: 18px;
+
+    background: var(--cream-2);
+
+    border:
+        1px solid #ead4b8;
+
+    border-radius: 15px;
+
+    color: var(--brown-2);
+
+    margin-bottom: 22px;
+}
+
+.empty {
+    padding: 38px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    display: none;
+}
+
+
+/* ==========================================================================
+   18. FOOTER
+   ========================================================================== */
+
+footer {
+    background: var(--espresso);
+
+    color: var(--cream);
+
+    margin-top: 55px;
+}
+
+.footer-main {
+    padding: 58px 0;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr;
+
+    gap: 45px;
+}
+
+.footer-brand h2 {
+    color: var(--gold-light);
+
+    font-size: 1.75rem;
+
+    margin-bottom: 10px;
+}
+
+.footer-brand p,
+.footer-column a {
+    color: #d9c7b7;
+}
+
+.footer-column {
+    display: grid;
+
+    align-content: start;
+
+    gap: 9px;
+}
+
+.footer-column h3 {
+    color: #fff;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 5px;
+}
+
+.footer-column a {
+    font-size: 0.92rem;
+
+    transition: 0.2s;
+}
+
+.footer-column a:hover {
+    color: var(--gold-light);
+
+    transform: translateX(3px);
+}
+
+.footer-bottom {
+    text-align: center;
+
+    padding: 17px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.09);
+
+    font-size: 0.84rem;
+
+    color: #bca99a;
+}
+
+
+/* ==========================================================================
+   19. GALLERY LIGHTBOX
+   ========================================================================== */
+
+#lightbox {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background:
+        rgba(20, 10, 5, 0.94);
+
+    place-items: center;
+
+    padding: 25px;
+
+    cursor: zoom-out;
+}
+
+#lightbox.show {
+    display: grid !important;
+}
+
+#lightbox-img {
+    max-height: 90vh;
+
+    max-width: 92vw;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 80px
+        rgba(0, 0, 0, 0.45);
+}
+
+
+/* ==========================================================================
+   20. MOBILE — TABLET
+   ========================================================================== */
+
+@media (max-width: 950px) {
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        left: 20px;
+        right: 20px;
+        top: 72px;
+
+        background:
+            rgba(43, 24, 18, 0.98);
+
+        padding: 10px;
+
+        border-radius: 18px;
+
+        box-shadow: var(--shadow);
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .cards,
+    .recipe-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .intro-grid,
+    .recipe-layout,
+    .recipe-content {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-layout {
+        gap: 30px;
+    }
+
+    .recipe-photo {
+        height: 430px;
+    }
+
+    .fact-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .eth-highlights {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero-content::before,
+    .hero-content::after {
+        display: none;
+    }
+}
+
+
+/* ==========================================================================
+   21. MOBILE — PHONE
+   ========================================================================== */
+
+@media (max-width: 650px) {
+
+    .container {
+        width:
+            min(
+                var(--max-width),
+                calc(100% - 26px)
+            );
+    }
+
+    .nav-inner {
+        min-height: 70px;
+    }
+
+    .logo {
+        font-size: 1.22rem;
+    }
+
+    .hero {
+        min-height: 600px;
+
+        padding:
+            80px 14px 95px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                3rem,
+                15vw,
+                4.4rem
+            );
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 17px;
+    }
+
+    .btn-outline {
+        margin-left: 4px;
+    }
+
+    .section {
+        padding: 58px 0;
+    }
+
+    .section-head {
+        display: block;
+
+        margin-bottom: 25px;
+    }
+
+    .section-head p {
+        margin-top: 9px;
+    }
+
+    .cards,
+    .recipe-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 13px;
+    }
+
+    .gallery-item:nth-child(n) {
+        transform: none;
+    }
+
+    .gallery-item img {
+        height: 180px;
+    }
+
+    .gallery-caption {
+        padding: 13px;
+    }
+
+    .recipe-photo {
+        height: 310px;
+    }
+
+    .recipe-title h1 {
+        font-size: 3rem;
+    }
+
+    .fact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .eth-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .filters {
+        width: 100%;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .form {
+        padding: 22px;
+    }
+}
+
+
+/* ==========================================================================
+   22. EXTRA SMALL PHONES
+   ========================================================================== */
+
+@media (max-width: 430px) {
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item img {
+        height: 230px;
+    }
+
+    .recipe-title h1 {
+        font-size: 2.6rem;
+    }
+
+    .recipe-stats {
+        flex-direction: column;
+    }
+
+    .stat {
+        width: 100%;
+    }
+}
+/* =========================================================
+   ETHIOPIA - MONUMENT & HERITAGE IMAGES
+   ========================================================= */
+
+.about-grid .panel .eth-photo {
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 18px;
+}
+
+.about-grid .panel .eth-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
