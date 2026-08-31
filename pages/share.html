@@ -1,22 +1,275 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Share an Idea | Taste of Ethiopia</title><link rel="stylesheet" href="../css/style.css"></head><body>
-<nav class="navbar"><div class="container nav-inner"><a class="logo" href="../index.html">Taste <span>of Ethiopia</span> 🇪🇹</a><button class="menu-toggle" aria-label="Open menu">☰</button><div class="nav-links"><a class="" href="../index.html">Home</a><a class="" href="../pages/recipes.html">Recipes</a><a class="" href="../pages/categories.html">Categories</a><a class="" href="../pages/gallary.html">Gallery</a><a href="../pages/favorites.html">Favorites ♡</a><a class="" href="../pages/ethiopia.html">Ethiopia</a><a class="" href="../pages/about.html">About</a><a class="active" href="../pages/share.html">Share</a></div></div></nav>
-<header class="page-heading"><div class="eyebrow">Help shape the project</div><h1>Share an Idea 💡</h1><p>Have a recipe, food, story or design idea? Send it here.</p></header>
-<section class="section"><div class="container">
+<!DOCTYPE html>
 
-<!-- Updated form action below to point directly to your Formspree endpoint -->
-<form class="form" action="https://formspree.io/f/xzebdgbg" method="POST">
-<div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Your name"></div>
-<div class="field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" placeholder="you@example.com"></div>
-<div class="field"><label for="type">What would you like to share?</label><select id="type" name="type"><option>Recipe idea</option><option>Gallery idea</option><option>Website improvement</option><option>Food story</option><option>Other</option></select></div>
-<div class="field"><label for="message">Your idea</label><textarea id="message" name="message" placeholder="Tell me your idea..."></textarea></div>
-<button class="btn" type="submit">Send idea →</button>
-</form>
+<html lang="en">
 
-</div></section>
-<footer><div class="container footer-main">
-<div class="footer-brand"><h2>Taste of Ethiopia 🇪🇹</h2><p>A cozy digital collection of Ethiopian recipes, food traditions, culture, and stories.</p></div>
-<div class="footer-column"><h3>Explore</h3><a href="../pages/recipes.html">Recipes</a><a href="../pages/categories.html">Categories</a><a href="../pages/gallary.html">Gallery</a><a href="./pages/favorites.html">
-                Favorites ♥<a href="../pages/ethiopia.html">Ethiopia</a></div>
-<div class="footer-column"><h3>Connect</h3><a href="../pages/about.html">About the site</a><a href="../pages/share.html">Share an idea</a></div>
-</div><div class="footer-bottom">Made with love for Ethiopian food · Taste of Ethiopia</div></footer><script src="../js/script.js"></script></body></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Share an Idea | Taste of Ethiopia</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container nav-inner">
+
+```
+    <a class="logo" href="../index.html">
+        Taste <span>of Ethiopia</span> 🇪🇹
+    </a>
+
+    <button class="menu-toggle" aria-label="Open menu">☰</button>
+
+    <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../pages/recipes.html">Recipes</a>
+        <a href="../pages/categories.html">Categories</a>
+        <a href="../pages/gallary.html">Gallery</a>
+        <a href="../pages/favorites.html">Favorites ♡</a>
+        <a href="../pages/ethiopia.html">Ethiopia</a>
+        <a href="../pages/about.html">About</a>
+        <a class="active" href="../pages/share.html">Share</a>
+    </div>
+
+</div>
+```
+
+</nav>
+
+<header class="page-heading">
+    <div class="eyebrow">Help shape the project</div>
+
+```
+<h1>Share an Idea 💡</h1>
+
+<p>
+    Have a recipe, food, story or design idea? Send it here.
+</p>
+```
+
+</header>
+
+<section class="section">
+    <div class="container">
+
+```
+    <form
+        class="form"
+        id="ideaForm"
+        action="https://formspree.io/f/xzebdgbg"
+        method="POST"
+    >
+
+        <div class="field">
+            <label for="name">Your name</label>
+
+            <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+            >
+        </div>
+
+
+        <div class="field">
+            <label for="email">Email (optional)</label>
+
+            <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+            >
+        </div>
+
+
+        <div class="field">
+            <label for="type">
+                What would you like to share?
+            </label>
+
+            <select id="type" name="type">
+                <option>Recipe idea</option>
+                <option>Gallery idea</option>
+                <option>Website improvement</option>
+                <option>Food story</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+
+        <div class="field">
+            <label for="message">Your idea</label>
+
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me your idea..."
+                required
+            ></textarea>
+        </div>
+
+
+        <button
+            class="btn"
+            id="submitButton"
+            type="submit"
+        >
+            Send idea →
+        </button>
+
+        <p
+            id="formMessage"
+            style="display:none;"
+        ></p>
+
+    </form>
+
+</div>
+```
+
+</section>
+
+<footer>
+
+```
+<div class="container footer-main">
+
+    <div class="footer-brand">
+        <h2>Taste of Ethiopia 🇪🇹</h2>
+
+        <p>
+            A cozy digital collection of Ethiopian recipes,
+            food traditions, culture, and stories.
+        </p>
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Explore</h3>
+
+        <a href="../pages/recipes.html">Recipes</a>
+
+        <a href="../pages/categories.html">Categories</a>
+
+        <a href="../pages/gallary.html">Gallery</a>
+
+        <a href="../pages/favorites.html">Favorites ♥</a>
+
+        <a href="../pages/ethiopia.html">Ethiopia</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+        <h3>Connect</h3>
+
+        <a href="../pages/about.html">About the site</a>
+
+        <a href="../pages/share.html">Share an idea</a>
+
+    </div>
+
+</div>
+
+
+<div class="footer-bottom">
+    Made with love for Ethiopian food · Taste of Ethiopia
+</div>
+```
+
+</footer>
+
+<script src="../js/script.js"></script>
+
+<script>
+const ideaForm = document.getElementById("ideaForm");
+
+if (ideaForm) {
+
+    ideaForm.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const submitButton =
+            document.getElementById("submitButton");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
+
+        formMessage.style.display = "none";
+
+        const formData = new FormData(ideaForm);
+
+        try {
+
+            const response = await fetch(
+                ideaForm.action,
+                {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Accept": "application/json"
+                    }
+                }
+            );
+
+            if (response.ok) {
+
+                ideaForm.reset();
+
+                formMessage.innerHTML =
+                    "Thank you! Your idea has been submitted successfully. 💛";
+
+                formMessage.style.display = "block";
+
+                submitButton.disabled = false;
+                submitButton.type = "button";
+                submitButton.textContent = "Send another idea";
+
+                submitButton.onclick = function() {
+
+                    formMessage.style.display = "none";
+
+                    submitButton.type = "submit";
+                    submitButton.textContent = "Send idea →";
+
+                    submitButton.onclick = null;
+
+                    document.getElementById("name").focus();
+
+                };
+
+            } else {
+
+                throw new Error("Form submission failed.");
+
+            }
+
+        } catch (error) {
+
+            formMessage.textContent =
+                "Oops! Something went wrong. Please try again.";
+
+            formMessage.style.display = "block";
+
+            submitButton.disabled = false;
+            submitButton.type = "submit";
+            submitButton.textContent = "Send idea →";
+
+        }
+
+    });
+
+}
+</script>
+
+</body>
+</html>
